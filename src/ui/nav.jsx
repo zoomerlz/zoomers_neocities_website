@@ -30,7 +30,7 @@ export default function Nav({ breakpoint }) {
       tiltMaxAngleY={10}
       className="md:w-1/4 lg:w-1/5"
     >
-      <nav className="h-full backdrop-blur border-2 border-double border-primary bg-primaryDark/80 p-5 text-2xl">
+      <nav className="h-full backdrop-blur border-2 border-double border-primary bg-primaryDark/60 p-5 text-2xl">
         <ul className="flex flex-col justify-around h-full">
           <CustomLink to={"/"} name={"Home"} />
           {/* Interests likes the Lego Clone Collection, SW in general, tuned cars in NFS, GTA mod recommendations*/}
