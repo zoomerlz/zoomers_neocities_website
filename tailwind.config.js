@@ -1,28 +1,20 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./index.html",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        primary: '#60e047',
-        primaryDark: '#1c4811',
-        primaryBackground: '#071404',
-        secondary: '#d8803c',
-        secondaryDark: '#4a2a0d',
-        secondaryBackground: '#140b03',
-      }
-    },
-    dropShadow: {
-      glow: [
-        "0 0px 20px rgba(255,255, 255, 0.35)",
-        "0 0px 65px rgba(255, 255,255, 0.2)"
-      ]
+    extend: {colors: {
+      primary: '#60e047',
+      primaryDark: '#1c4811',
+      primaryBackground: '#071404',
+      secondary: '#d8803c',
+      secondaryDark: '#4a2a0d',
+      secondaryBackground: '#140b03',
     }
   },
+  },
   plugins: [],
-  darkMode: "class",
-};
+}
+

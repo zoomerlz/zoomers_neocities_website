@@ -1,4 +1,4 @@
-import ContentBox from "../app/ui/content-box";
+import ContentBox from "../ui/content-box";
 
 export default function Interests({ breakpoint }) {
   return (

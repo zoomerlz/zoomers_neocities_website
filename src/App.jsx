@@ -1,4 +1,3 @@
-"use client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./ui/header";
@@ -6,15 +5,15 @@ import Nav from "./ui/nav";
 import Music from "./ui/music";
 import Chat from "./ui/chat";
 
-import Home from "../pages/home";
-import Projects from "../pages/projects";
-import Interests from "../pages/interests";
-import Media from "../pages/media";
-import Settings from "../pages/settings";
+import Home from "./pages/home";
+import Projects from "./pages/projects";
+import Interests from "./pages/interests";
+import Media from "./pages/media";
+import Settings from "./pages/settings";
 
 import CheckBreakpoint from "./script/checkbreakpoint";
 
-export default function Page() {
+function App() {
   const currentBreakpoint = CheckBreakpoint();
   return (
     <Router>
@@ -30,10 +29,22 @@ export default function Page() {
                 path="/"
                 element={<Home breakpoint={currentBreakpoint} />}
               />
-              <Route path="/projects" element={<Projects breakpoint={currentBreakpoint}/>} />
-              <Route path="/interests" element={<Interests breakpoint={currentBreakpoint}/>} />
-              <Route path="/media" element={<Media breakpoint={currentBreakpoint}/>} />
-              <Route path="/settings" element={<Settings breakpoint={currentBreakpoint}/>} />
+              <Route
+                path="/projects"
+                element={<Projects breakpoint={currentBreakpoint} />}
+              />
+              <Route
+                path="/interests"
+                element={<Interests breakpoint={currentBreakpoint} />}
+              />
+              <Route
+                path="/media"
+                element={<Media breakpoint={currentBreakpoint} />}
+              />
+              <Route
+                path="/settings"
+                element={<Settings breakpoint={currentBreakpoint} />}
+              />
             </Routes>
             <div className="flex lg:flex-col flex-row lg:w-1/4 h-1/4 lg:h-full gap-2 lg:gap-4">
               <Music breakpoint={currentBreakpoint} />
@@ -45,3 +56,5 @@ export default function Page() {
     </Router>
   );
 }
+
+export default App;

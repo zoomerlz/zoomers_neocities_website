@@ -1,6 +1,5 @@
-"use client";
 import Tilt from "react-parallax-tilt";
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function CustomLink({ to, name, children, ...props }) {
 

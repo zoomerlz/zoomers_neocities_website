@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2family=VT323');
+
+body{
+  font-family: 'VT323';
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
