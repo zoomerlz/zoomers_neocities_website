@@ -1,5 +1,6 @@
 import Tilt from "react-parallax-tilt";
 
+//TODO add a musicplayer, maybe https://webdeckplayer.neocities.org/
 export default function Music({breakpoint}) {
   return (
     <Tilt
@@ -10,7 +11,7 @@ export default function Music({breakpoint}) {
       tiltMaxAngleY={15}
       className="w-full h-full"
     >
-      <div className="w-full h-full border-2 border-double border-primary bg-primaryDark/80 p-5 text-2xl">
+      <div className="w-full h-full backdrop-blur border-2 border-double border-primary bg-primaryDark/60 p-5 text-2xl">
         <h1>This is the music player</h1>
       </div>
     </Tilt>

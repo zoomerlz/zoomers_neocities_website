@@ -10,7 +10,7 @@ export default function Header({ breakpoint }) {
       tiltMaxAngleY={5}
       className="order-last lg:order-none w-full h-full"
     >
-      <div className="w-full h-full border-2 border-double border-primary bg-primaryDark/80 p-5 text-2xl">
+      <div className="w-full h-full backdrop-blur border-2 border-double border-primary bg-primaryDark/60 p-5 text-2xl">
         <h1>This is the header</h1>
         <p>Current breakpoint: {breakpoint}</p>
       </div>
