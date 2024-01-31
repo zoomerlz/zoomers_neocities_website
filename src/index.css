@@ -1,12 +1,33 @@
+@import url("https://fonts.googleapis.com/css2family=VT323");
 
-body{
-  font-family: 'VT323';
+body {
+  font-family: "VT323";
+}
+
+:root {
+  --CornerColor: #60e047;
+}
+
+/* adapted from https://rayka.info/ */
+.corners{
+  background: linear-gradient(to right, var(--CornerColor) 5px, transparent 1px)
+      0 0,
+    linear-gradient(to right, var(--CornerColor) 5px, transparent 1px) 0 100%,
+    linear-gradient(to left, var(--CornerColor) 5px, transparent 1px) 100% 0,
+    linear-gradient(to left, var(--CornerColor) 5px, transparent 1px) 100% 100%,
+    linear-gradient(to bottom, var(--CornerColor) 5px, transparent 1px) 0 0,
+    linear-gradient(to bottom, var(--CornerColor) 5px, transparent 1px) 100% 0,
+    linear-gradient(to top, var(--CornerColor) 5px, transparent 1px) 0 100%,
+    linear-gradient(to top, var(--CornerColor) 5px, transparent 1px) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 /* TODO styling for the mouse cursor */
 /* TODO styling for the scroll bar  */
+
+
