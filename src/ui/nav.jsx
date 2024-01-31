@@ -1,4 +1,3 @@
-import Tilt from "react-parallax-tilt";
 import { NavLink } from "react-router-dom";
 
 function CustomLink({ to, name, children, ...props }) {
@@ -20,16 +19,8 @@ function CustomLink({ to, name, children, ...props }) {
 }
 
 //TODO add submenu navigation
-export default function Nav({ breakpoint }) {
+export default function Nav() {
   return (
-    <Tilt
-      tiltEnable={breakpoint !== "xl" && breakpoint !== "2xl" ? false : true}
-      perspective={2000}
-      tiltReverse={true}
-      tiltMaxAngleX={5}
-      tiltMaxAngleY={10}
-      className="md:w-1/4 lg:w-1/5"
-    >
       <nav className="h-full backdrop-blur border-2 border-double border-primary bg-primaryDark/60 p-5 text-2xl">
         <ul className="flex flex-col justify-around h-full">
           <CustomLink to={"/"} name={"Home"} />
@@ -43,6 +34,5 @@ export default function Nav({ breakpoint }) {
           <CustomLink to={"/settings"} name={"Settings"} />
         </ul>
       </nav>
-    </Tilt>
   );
 }

@@ -1,19 +1,16 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect, useMemo, useState } from "react";
+import { HashRouter as Router } from "react-router-dom";
 
 import Header from "./ui/header";
 import Nav from "./ui/nav";
+import ContentBox from "./ui/content-box";
 import Music from "./ui/music";
 import Chat from "./ui/chat";
 
-import Home from "./pages/home";
-import Projects from "./pages/projects";
-import Interests from "./pages/interests";
-import Media from "./pages/media";
-import Settings from "./pages/settings";
-
 import CheckBreakpoint from "./script/checkbreakpoint";
 
-import { useEffect, useMemo, useState } from "react";
+import Tilt from "react-parallax-tilt";
+
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 // import { loadAll } from "@/tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
 // import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
@@ -22,6 +19,9 @@ import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSl
 
 function App() {
   const currentBreakpoint = CheckBreakpoint();
+  const isTiltEnabled =
+    currentBreakpoint !== "xl" && currentBreakpoint !== "2xl" ? false : true;
+
   const [init, setInit] = useState(false);
 
   // this should be run only once per application lifetime
@@ -42,7 +42,7 @@ function App() {
   const particlesLoaded = (container) => {
     console.log(container);
   };
-  
+
   //TODO Try to recreate the nfs carbon background
   const options = useMemo(
     () => ({
@@ -125,36 +125,60 @@ function App() {
       />
       <main className="transition-all h-screen p-5 lg:p-10 xl:px-24 2xl:px-48 space-y-2 lg:space-y-4 2xl:space-y-6 text-primary bg-primaryBackground">
         <div className="flex h-1/5">
-          <Header breakpoint={currentBreakpoint} />
+          <Tilt
+            tiltEnable={isTiltEnabled}
+            perspective={2000}
+            tiltReverse={true}
+            tiltMaxAngleX={10}
+            tiltMaxAngleY={5}
+            className="order-last lg:order-none w-full h-full"
+          >
+            <Header breakpoint={currentBreakpoint} />
+          </Tilt>
         </div>
         <div className="flex h-4/5 gap-2 lg:gap-4">
-          <Nav breakpoint={currentBreakpoint} />
-          <div className="flex lg:flex-row flex-col w-full gap-2 lg:gap-4 ">
-            <Routes>
-              <Route
-                path="/"
-                element={<Home breakpoint={currentBreakpoint} />}
-              />
-              <Route
-                path="/projects"
-                element={<Projects breakpoint={currentBreakpoint} />}
-              />
-              <Route
-                path="/interests"
-                element={<Interests breakpoint={currentBreakpoint} />}
-              />
-              <Route
-                path="/media"
-                element={<Media breakpoint={currentBreakpoint} />}
-              />
-              <Route
-                path="/settings"
-                element={<Settings breakpoint={currentBreakpoint} />}
-              />
-            </Routes>
+          <Tilt
+            tiltEnable={isTiltEnabled}
+            perspective={2000}
+            tiltReverse={true}
+            tiltMaxAngleX={5}
+            tiltMaxAngleY={10}
+            className="md:w-1/4 lg:w-1/5"
+          >
+            <Nav />
+          </Tilt>
+          <div className="flex lg:flex-row flex-col-reverse w-full gap-2 lg:gap-4 ">
+            <Tilt
+              tiltEnable={isTiltEnabled}
+              perspective={2000}
+              tiltReverse={true}
+              tiltMaxAngleX={5}
+              tiltMaxAngleY={5}
+              className="w-full h-full"
+            >
+              <ContentBox />
+            </Tilt>
             <div className="flex lg:flex-col flex-row lg:w-1/4 h-1/4 lg:h-full gap-2 lg:gap-4">
-              <Music breakpoint={currentBreakpoint} />
-              <Chat breakpoint={currentBreakpoint} />
+              <Tilt
+                tiltEnable={isTiltEnabled}
+                perspective={2000}
+                tiltReverse={true}
+                tiltMaxAngleX={5}
+                tiltMaxAngleY={15}
+                className="w-full h-full"
+              >
+                <Music />
+              </Tilt>
+              <Tilt
+                tiltEnable={isTiltEnabled}
+                perspective={2000}
+                tiltReverse={true}
+                tiltMaxAngleX={5}
+                tiltMaxAngleY={15}
+                className="w-full h-full"
+              >
+                <Chat />
+              </Tilt>
             </div>
           </div>
         </div>

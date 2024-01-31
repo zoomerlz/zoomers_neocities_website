@@ -1,18 +1,21 @@
-import Tilt from "react-parallax-tilt";
+import { Routes, Route } from "react-router-dom";
 
-export default function ContentBox({ breakpoint, content }) {
+import Home from "../pages/home";
+import Projects from "../pages/projects";
+import Interests from "../pages/interests";
+import Media from "../pages/media";
+import Settings from "../pages/settings";
+
+export default function ContentBox() {
   return (
-    <Tilt
-      tiltEnable={breakpoint !== "xl" && breakpoint !== "2xl" ? false : true}
-      perspective={2000}
-      tiltReverse={true}
-      tiltMaxAngleX={5}
-      tiltMaxAngleY={5}
-      className="order-last lg:order-none w-full h-full"
-    >
-      <div className="w-full h-full backdrop-blur border-2 border-double border-primary bg-primaryDark/60 p-5 text-2xl">
-        {content}
-      </div>
-    </Tilt>
+    <div className="w-full h-full backdrop-blur border-2 border-double border-primary bg-primaryDark/60 p-5 text-2xl">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/interests" element={<Interests />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/media" element={<Media />} />
+        <Route path="/settings" element={<Settings />} />
+      </Routes>
+    </div>
   );
 }

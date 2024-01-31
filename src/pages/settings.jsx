@@ -1,7 +1,3 @@
-import ContentBox from "../ui/content-box";
-
-export default function Settings({ breakpoint }) {
-  return (
-    <ContentBox breakpoint={breakpoint} content={<div>Settings</div>}></ContentBox>
-  );
+export default function Settings() {
+  return <div>Settings</div>;
 }
