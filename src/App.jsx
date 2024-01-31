@@ -40,7 +40,7 @@ function App() {
   }, []);
 
   const particlesLoaded = (container) => {
-    console.log(container);
+    // console.log(container);
   };
 
   //TODO Try to recreate the nfs carbon background
